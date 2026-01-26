@@ -1,5 +1,9 @@
 # Scout Elasticsearch Driver   
 
+*Warning*
+
+This package was orginally created for ES 7.x and is no longer maintained. I updated this package to temporary use this with ES 8.x but I would highly recommend not to use this package in production.
+
 💥 **Introducing [a new Elasticsearch ecosystem for Laravel](#alternatives).** 💥 
 
 ---
