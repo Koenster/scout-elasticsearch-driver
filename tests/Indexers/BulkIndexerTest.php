@@ -17,7 +17,6 @@ class BulkIndexerTest extends AbstractIndexerTest
             ->once()
             ->with([
                 'index' => 'test',
-                'type' => 'test',
                 'body' => [
                     ['index' => ['_id' => 1]],
                     ['name' => 'foo'],
@@ -41,7 +40,6 @@ class BulkIndexerTest extends AbstractIndexerTest
             ->once()
             ->with([
                 'index' => 'test',
-                'type' => 'test',
                 'body' => [
                     ['index' => ['_id' => 1]],
                     ['name' => 'foo', '__soft_deleted' => 1],
@@ -67,7 +65,6 @@ class BulkIndexerTest extends AbstractIndexerTest
             ->once()
             ->with([
                 'index' => 'test',
-                'type' => 'test',
                 'refresh' => 'true',
                 'body' => [
                     ['index' => ['_id' => 1]],
@@ -90,7 +87,6 @@ class BulkIndexerTest extends AbstractIndexerTest
             ->once()
             ->with([
                 'index' => 'test',
-                'type' => 'test',
                 'body' => [
                     ['delete' => ['_id' => 1]],
                     ['delete' => ['_id' => 2]],
@@ -116,7 +112,6 @@ class BulkIndexerTest extends AbstractIndexerTest
             ->once()
             ->with([
                 'index' => 'test',
-                'type' => 'test',
                 'body' => [
                     ['delete' => ['_id' => 1]],
                     ['delete' => ['_id' => 2]],

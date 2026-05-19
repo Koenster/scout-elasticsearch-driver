@@ -60,7 +60,6 @@ class ElasticEngineTest extends AbstractTestCase
             [
                 [
                     'index' => 'test',
-                    'type' => 'test',
                     'body' => [
                         '_source' => [
                             'title',
@@ -116,7 +115,6 @@ class ElasticEngineTest extends AbstractTestCase
                 ],
                 [
                     'index' => 'test',
-                    'type' => 'test',
                     'body' => [
                         '_source' => [
                             'title',
@@ -180,7 +178,6 @@ class ElasticEngineTest extends AbstractTestCase
             [
                 [
                     'index' => 'test',
-                    'type' => 'test',
                     'body' => [
                         'query' => [
                             'bool' => [
@@ -221,7 +218,6 @@ class ElasticEngineTest extends AbstractTestCase
             ->once()
             ->with([
                 'index' => 'test',
-                'type' => 'test',
                 'body' => [
                     '_source' => [
                         'title',
@@ -261,7 +257,6 @@ class ElasticEngineTest extends AbstractTestCase
             ->once()
             ->with([
                 'index' => 'test',
-                'type' => 'test',
                 'body' => [
                     'query' => [
                         'match' => [

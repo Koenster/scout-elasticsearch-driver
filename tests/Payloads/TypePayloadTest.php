@@ -18,7 +18,6 @@ class TypePayloadTest extends AbstractTestCase
         $this->assertSame(
             [
                 'index' => 'test',
-                'type' => 'test',
             ],
             $payload->get()
         );
@@ -37,13 +36,11 @@ class TypePayloadTest extends AbstractTestCase
 
         $payload = (new TypePayload($model))
             ->set('index', 'test_index')
-            ->set('type', 'test_type')
             ->set('body', []);
 
         $this->assertSame(
             [
                 'index' => 'foo',
-                'type' => 'bar',
                 'body' => [],
             ],
             $payload->get()

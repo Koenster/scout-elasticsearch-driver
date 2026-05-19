@@ -139,7 +139,6 @@ class ElasticMigrateModelCommand extends Command
         $sourceIndexConfigurator = $sourceModel->getIndexConfigurator();
 
         $targetIndex = $this->argument('target-index');
-        $targetType = $sourceModel->searchableAs();
 
         $mapping = array_merge_recursive(
             $sourceIndexConfigurator->getDefaultMapping(),
@@ -157,9 +156,7 @@ class ElasticMigrateModelCommand extends Command
 
         $payload = (new RawPayload)
             ->set('index', $targetIndex)
-            ->set('type', $targetType)
-            ->set('include_type_name', 'true')
-            ->set('body.'.$targetType, $mapping)
+            ->set('body', $mapping)
             ->get();
 
         ElasticClient::indices()

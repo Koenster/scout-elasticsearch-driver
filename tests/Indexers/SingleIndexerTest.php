@@ -17,7 +17,6 @@ class SingleIndexerTest extends AbstractIndexerTest
             ->once()
             ->with([
                 'index' => 'test',
-                'type' => 'test',
                 'id' => 1,
                 'body' => [
                     'name' => 'foo',
@@ -27,7 +26,6 @@ class SingleIndexerTest extends AbstractIndexerTest
             ->once()
             ->with([
                 'index' => 'test',
-                'type' => 'test',
                 'id' => 2,
                 'body' => [
                     'name' => 'bar',
@@ -49,7 +47,6 @@ class SingleIndexerTest extends AbstractIndexerTest
             ->once()
             ->with([
                 'index' => 'test',
-                'type' => 'test',
                 'id' => 1,
                 'body' => [
                     'name' => 'foo',
@@ -60,7 +57,6 @@ class SingleIndexerTest extends AbstractIndexerTest
             ->once()
             ->with([
                 'index' => 'test',
-                'type' => 'test',
                 'id' => 2,
                 'body' => [
                     'name' => 'bar',
@@ -71,7 +67,6 @@ class SingleIndexerTest extends AbstractIndexerTest
             ->once()
             ->with([
                 'index' => 'test',
-                'type' => 'test',
                 'id' => 3,
                 'body' => [
                     '__soft_deleted' => 0,
@@ -93,7 +88,6 @@ class SingleIndexerTest extends AbstractIndexerTest
             ->once()
             ->with([
                 'index' => 'test',
-                'type' => 'test',
                 'refresh' => 'true',
                 'id' => 1,
                 'body' => [
@@ -104,7 +98,6 @@ class SingleIndexerTest extends AbstractIndexerTest
             ->once()
             ->with([
                 'index' => 'test',
-                'type' => 'test',
                 'refresh' => 'true',
                 'id' => 2,
                 'body' => [
@@ -125,7 +118,6 @@ class SingleIndexerTest extends AbstractIndexerTest
             ->once()
             ->with([
                 'index' => 'test',
-                'type' => 'test',
                 'id' => 1,
                 'client' => [
                     'ignore' => 404,
@@ -135,7 +127,6 @@ class SingleIndexerTest extends AbstractIndexerTest
             ->once()
             ->with([
                 'index' => 'test',
-                'type' => 'test',
                 'id' => 2,
                 'client' => [
                     'ignore' => 404,
@@ -145,7 +136,6 @@ class SingleIndexerTest extends AbstractIndexerTest
             ->once()
             ->with([
                 'index' => 'test',
-                'type' => 'test',
                 'id' => 3,
                 'client' => [
                     'ignore' => 404,
@@ -167,7 +157,6 @@ class SingleIndexerTest extends AbstractIndexerTest
             ->once()
             ->with([
                 'index' => 'test',
-                'type' => 'test',
                 'id' => 1,
                 'refresh' => true,
                 'client' => [
@@ -178,7 +167,6 @@ class SingleIndexerTest extends AbstractIndexerTest
             ->once()
             ->with([
                 'index' => 'test',
-                'type' => 'test',
                 'id' => 2,
                 'refresh' => true,
                 'client' => [
@@ -189,7 +177,6 @@ class SingleIndexerTest extends AbstractIndexerTest
             ->once()
             ->with([
                 'index' => 'test',
-                'type' => 'test',
                 'id' => 3,
                 'refresh' => true,
                 'client' => [
