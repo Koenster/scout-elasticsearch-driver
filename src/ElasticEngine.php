@@ -251,11 +251,6 @@ class ElasticEngine extends Engine
         $this
             ->buildSearchQueryPayloadCollection($builder, ['highlight' => false])
             ->each(function ($payload) use (&$count) {
-                // ES 8.x _count endpoint rejects search-only params
-                foreach (['from', 'size', 'sort', '_source', 'collapse', 'highlight', 'min_score', 'explain', 'profile'] as $key) {
-                    unset($payload['body'][$key]);
-                }
-
                 $result = ElasticClient::count($payload);
 
                 $count = $result['count'];
