@@ -73,8 +73,6 @@ class BulkIndexer implements IndexerInterface
             $bulkPayload->set('refresh', $documentRefresh);
         }
 
-        $bulkPayload->set('client.ignore', 404);
-
         ElasticClient::bulk($bulkPayload->get());
     }
 }

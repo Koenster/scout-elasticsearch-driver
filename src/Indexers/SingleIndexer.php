@@ -2,6 +2,7 @@
 
 namespace ScoutElastic\Indexers;
 
+use Elastic\Elasticsearch\Exception\ClientResponseException;
 use Illuminate\Database\Eloquent\Collection;
 use ScoutElastic\Facades\ElasticClient;
 use ScoutElastic\Migratable;
@@ -57,9 +58,13 @@ class SingleIndexer implements IndexerInterface
                 $payload->set('refresh', $documentRefresh);
             }
 
-            $payload->set('client.ignore', 404);
-
-            ElasticClient::delete($payload->get());
+            try {
+                ElasticClient::delete($payload->get());
+            } catch (ClientResponseException $e) {
+                if ($e->getResponse()->getStatusCode() !== 404) {
+                    throw $e;
+                }
+            }
         });
     }
 }
