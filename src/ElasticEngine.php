@@ -362,4 +362,50 @@ class ElasticEngine extends Engine
             ->orderBy($model->getScoutKeyName())
             ->unsearchable();
     }
+
+    /**
+     * Map the given results to a lazy collection of models. (Laravel Scout 9+)
+     *
+     * This driver eager-loads in map(); we wrap it so the Scout 9 abstract
+     * method is satisfied and cursor()-based iteration keeps working.
+     *
+     * {@inheritdoc}
+     */
+    public function lazyMap(Builder $builder, $results, $model)
+    {
+        return \Illuminate\Support\LazyCollection::make(
+            $this->map($builder, $results, $model)->all()
+        );
+    }
+
+    /**
+     * Create a search index. (Laravel Scout 9+)
+     *
+     * Indices in this driver are managed through index configurators and the
+     * package's own elastic:* artisan commands, not Scout's generic index API.
+     *
+     * {@inheritdoc}
+     *
+     * @throws \Exception
+     */
+    public function createIndex($name, array $options = [])
+    {
+        throw new \Exception(
+            'ElasticEngine indices are managed via index configurators / the package elastic:* commands, not Scout::createIndex().'
+        );
+    }
+
+    /**
+     * Delete a search index. (Laravel Scout 9+)
+     *
+     * {@inheritdoc}
+     *
+     * @throws \Exception
+     */
+    public function deleteIndex($name)
+    {
+        throw new \Exception(
+            'ElasticEngine indices are managed via index configurators / the package elastic:* commands, not Scout::deleteIndex().'
+        );
+    }
 }
