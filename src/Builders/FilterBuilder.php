@@ -167,7 +167,7 @@ class FilterBuilder extends Builder
      * @param  array  $value
      * @return $this
      */
-    public function whereIn($field, array $value)
+    public function whereIn($field, $value)
     {
         $this->wheres['must'][] = [
             'terms' => [
@@ -187,7 +187,7 @@ class FilterBuilder extends Builder
      * @param  array  $value
      * @return $this
      */
-    public function whereNotIn($field, array $value)
+    public function whereNotIn($field, $value)
     {
         $this->wheres['must_not'][] = [
             'terms' => [
